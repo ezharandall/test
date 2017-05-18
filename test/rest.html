@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>REST API Sharepoint</title>
+  </head>
+ <body>
+
+ <script type="text/javascript">
+ function getListItemById(webUrl,listName, itemId, success, failure) {
+    var url = webUrl + "/_vti_bin/listdata.svc/" + listName + "(" + itemId + ")";
+    $.ajax({
+        url: url,
+        method: "GET",
+        headers: { "Accept": "application/json; odata=verbose" },
+        success: function (data) {
+            success(data.d);
+        },
+        error: function (data) {
+            failure(data.responseJSON.error);
+        }
+    });
+}
+
+
+//Usage
+getListItemById('https://contoso.sharepoint.com/project/','Tasks',2,function(taskItem){
+    console.log(taskItem.TaskName); 
+  },
+  function(error){
+    console.log(JSON.stringify(error));
+  }
+);
+
+ </script>
+
+</body>
+</html>
