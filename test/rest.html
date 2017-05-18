@@ -2,13 +2,13 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>REST API Sharepoint</title>
+    <title>REST API SharePoint</title>
   </head>
  <body>
 
  <script type="text/javascript">
- function getListItemById(webUrl, Load-Test-Request-Form-List, itemId, success, failure) {
-    var url = webUrl + "/_vti_bin/listdata.svc/" + Load-Test-Request-Form-List + "(" + itemId + ")";
+ function getListItemById(webUrl, Load-Test-Request-Form-List, Ready4LT, success, failure) {
+    var url = http://mydmdc/sites/cioarch/loadtst/Lists/New_List/AllItems.aspx + "/_vti_bin/listdata.svc/" + Load-Test-Request-Form-List + "(" + itemId + ")";
     $.ajax({
         url: url,
         method: "GET",
