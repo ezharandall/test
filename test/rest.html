@@ -8,7 +8,7 @@
 
  <script type="text/javascript">
  function getListItemById(webUrl, Load-Test-Request-Form-List, Ready4LT, success, failure) {
-    var url = http://mydmdc/sites/cioarch/loadtst/Lists/New_List/AllItems.aspx + "/_vti_bin/listdata.svc/" + Load-Test-Request-Form-List + "(" + itemId + ")";
+    var url = http://mydmdc/sites/cioarch/loadtst/Lists/Load-Test-Request-Form/AllItems.aspx + "/_vti_bin/ListData.svc/" + Load-Test-Request-Form-List + "(" + itemId + ")";
     $.ajax({
         url: url,
         method: "GET",
@@ -24,8 +24,8 @@
 
 
 //Usage
-getListItemById('https://contoso.sharepoint.com/project/','Tasks',2,function(taskItem){
-    console.log(taskItem.TaskName); 
+getListItemById('https://contoso.sharepoint.com/project/','YES',2,function(Ready4LT){
+    console.log(Ready4LT.YES); 
   },
   function(error){
     console.log(JSON.stringify(error));
